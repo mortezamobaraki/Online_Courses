@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="db_EducationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T_Students">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="StudentFamily" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="StudentAge" Type="int" />
+          <Property Name="StudentPhoneNumber" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="StudentPassword" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="StudentEmail" Type="varchar" MaxLength="50" />
+          <Property Name="StudentGender" Type="bit" Nullable="false" />
+          <Property Name="StudentMarital" Type="bit" />
+          <Property Name="StudentImageName" Type="varchar" MaxLength="50" />
+          <Property Name="StudentRegisterDate" Type="datetime" Nullable="false" />
+          <Property Name="StudentIsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="db_EducationModelStoreContainer">
+          <EntitySet Name="T_Students" EntityType="Self.T_Students" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_EducationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="T_Students">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentFamily" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentAge" Type="Int32" />
+          <Property Name="StudentPhoneNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StudentPassword" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StudentGender" Type="Boolean" Nullable="false" />
+          <Property Name="StudentMarital" Type="Boolean" />
+          <Property Name="StudentImageName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StudentRegisterDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StudentIsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="db_EducationEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_Students" EntityType="Self.T_Students" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_EducationModelStoreContainer" CdmEntityContainer="db_EducationEntities">
+          <EntitySetMapping Name="T_Students">
+            <EntityTypeMapping TypeName="db_EducationModel.T_Students">
+              <MappingFragment StoreEntitySet="T_Students">
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="StudentFamily" ColumnName="StudentFamily" />
+                <ScalarProperty Name="StudentAge" ColumnName="StudentAge" />
+                <ScalarProperty Name="StudentPhoneNumber" ColumnName="StudentPhoneNumber" />
+                <ScalarProperty Name="StudentPassword" ColumnName="StudentPassword" />
+                <ScalarProperty Name="StudentEmail" ColumnName="StudentEmail" />
+                <ScalarProperty Name="StudentGender" ColumnName="StudentGender" />
+                <ScalarProperty Name="StudentMarital" ColumnName="StudentMarital" />
+                <ScalarProperty Name="StudentImageName" ColumnName="StudentImageName" />
+                <ScalarProperty Name="StudentRegisterDate" ColumnName="StudentRegisterDate" />
+                <ScalarProperty Name="StudentIsActive" ColumnName="StudentIsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

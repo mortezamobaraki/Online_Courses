@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Online_Courses.Models.T_Students>
+
+@{
+    ViewBag.Title = "کاربران";
+}
+
+<div class="jumbotron text-center">
+    <h3>
+        لیست دانشجویان
+    </h3>
+</div>
+
+<p>
+    @Html.ActionLink("ثبت نام دانشجو جدید", "Create", null, new {@class="btn btn-success"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentFamily)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentPhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentImageName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentRegisterDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentIsActive)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentFamily)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentPhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentImageName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentRegisterDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentIsActive)
+        </td>
+        <td class="col-4">
+            @Html.ActionLink("ویرایش", "Edit", new { id=item.StudentId }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("جزییات", "Details", new { id=item.StudentId }, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("حذف", "Delete", new { id=item.StudentId }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
