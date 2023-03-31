@@ -1,0 +1,151 @@
+﻿@model Online_Courses.Models.T_Students
+
+@{
+    string name = Model.StudentName + " " + Model.StudentFamily;
+    ViewBag.Title = "حذف اطلاعات " + name;
+}
+
+<h4 class="title_list text_list">حذف اطلاعات  @name</h4>
+
+<h5>آیا مطمئن هستید که می خواهید این دانشجو را حذف کنید؟</h5>
+<div>
+
+    <hr />
+    <div class="form-row">
+        <div class="col">
+            <div class="form-label">
+                @Html.DisplayNameFor(model => model.StudentName)
+            </div>
+            <div class="form-control">
+                @Html.DisplayFor(model => model.StudentName)
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-label">
+                @Html.DisplayNameFor(model => model.StudentFamily)
+            </div>
+            <div class="form-control">
+                @Html.DisplayFor(model => model.StudentFamily)
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="form-row">
+        <div class="col">
+            <div class="form-label">
+                @Html.DisplayNameFor(model => model.StudentEmail)
+            </div>
+            <div class="form-control">
+                @Html.DisplayFor(model => model.StudentEmail)
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-label">
+                @Html.DisplayNameFor(model => model.StudentPhoneNumber)
+            </div>
+            <div class="form-control">
+                @Html.DisplayFor(model => model.StudentPhoneNumber)
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="form-row">
+        <div class="col">
+            <div class="form-label">
+                @Html.DisplayNameFor(model => model.StudentGender)
+            </div>
+            <div class="form-control">
+                @if (Model.StudentGender == true)
+                {
+                    <span>
+                        مرد
+                    </span>
+                }
+                else
+                {
+                    <span>
+                        زن
+                    </span>
+                }
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-label">
+                @Html.DisplayNameFor(model => model.StudentAge)
+            </div>
+            <div class="form-control">
+                @Html.DisplayFor(model => model.StudentAge)
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="form-row">
+        <div class="col">
+            <div class="form-label">
+                @Html.DisplayNameFor(model => model.StudentIsActive)
+            </div>
+            <div class="form-control">
+                @if (Model.StudentIsActive == true)
+                {
+                    <span style="color:green">
+                        فعال
+                    </span>
+                }
+                else
+                {
+                    <span style="color:red">
+                        غیرفعال
+                    </span>
+                }
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-label">
+                @Html.DisplayNameFor(model => model.StudentMarital)
+            </div>
+            <div class="form-control">
+                @if (Model.StudentMarital == true)
+                {
+                    <span>
+                        متأهل
+                    </span>
+                }
+                else
+                {
+                    <span>
+                        مجرد
+                    </span>
+                }
+
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="form-row">
+        <div class="col">
+            <div class="form-label">
+                @Html.DisplayNameFor(model => model.StudentImageName)
+            </div>
+            <img src="~/Images/profile/@Model.StudentImageName" style="width:120px;height:120px;border-radius:200px" />
+        </div>
+        <div class="col">
+            <div class="form-label">
+                @Html.DisplayNameFor(model => model.StudentRegisterDate)
+            </div>
+            <div class="form-control">
+                @Html.DisplayFor(model => model.StudentRegisterDate)
+            </div>
+        </div>
+    </div>
+    <br />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group" style="float:left !important;margin-top:15px !important;margin-bottom:15px !important">
+        @Html.ActionLink("بازگشت به لیست دانشجویان", "Index", null, new { @class = "btn btn-primary" }) |
+        <input type="submit" value="حذف دانشجو" class="btn btn-danger" />
+    </div>
+}

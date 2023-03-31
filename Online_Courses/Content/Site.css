@@ -10,10 +10,11 @@ body {
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-top:120px;
+    padding-top: 120px;
     padding-left: 15px;
     padding-right: 15px;
-    width:auto;
+    margin: 0 100px 20px -50px;
+    width: auto;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -28,7 +29,7 @@ textarea {
 ---------------------*/
 
 .header-section {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     padding-top: 20px;
@@ -39,13 +40,23 @@ textarea {
 .site-logo {
     display: inline-block;
     margin-top: 12px;
-    margin-right:10px;
+    margin-right:50px;
     float: right;
+}
+.site-logo a{
+    text-decoration:none;
+}
+
+.site-logo_web{
+    color:goldenrod;
+}
+.site-logo_uni{
+    color:white;
 }
 
 .main-menu{
     margin-left:50px;
-    padding-right:8px;
+    padding-right:280px;
 }
 .main-menu ul {
     list-style: none;
@@ -59,7 +70,7 @@ textarea {
     display: inline-block;
     font-size: 18px;
     color: #fff;
-    margin-right: 35px;
+    margin-right: 60px;
     font-weight: 600;
     padding: 20px 0 5px;
     text-decoration:none;
@@ -69,65 +80,99 @@ textarea {
     color: #d82a4e;
 }
 
-.header-btn_1 {
-    position:absolute;
-    right:750px;
-    margin-left: 100px;
-    margin-top:10px;
-    background-color:black;
-    color:white;
+.button ul {
+    list-style: none;
+}
+
+.button ul li a{
     text-decoration:none;
-    width:100px;
-    height:50px;
-    font-size:20px;
+    
+}
+.header-btn_1 {
+    position: absolute;
+    top: 25px;
+    left: 180px;
+    background-color: black;
+    color: white;
+    width: 120px;
+    height: 50px;
+    font-size: 20px;
+    float: left;
 }
 .header-btn_2 {
     position: absolute;
-    right: 880px;
-    margin-left: 100px;
-    margin-top: 10px;
+    top: 25px;
+    left: 50px;
     background-color: black;
     color: white;
-    text-decoration: none;
-    width: 100px;
+    width: 120px;
     height: 50px;
     font-size: 20px;
-}
-
-.nav-switch {
-    display: none;
+    float: left;
 }
 
 /*------------------
     Body Content 
 ------------------*/
-
+.title_list{
+    background-color:midnightblue;
+    color:white;
+    text-align:center;
+    height:80px;
+    border-radius:5px 5px;
+    margin-bottom:20px;
+}
+.text_list{
+    padding-top:20px;
+}
 
 
 /*----------------
     Footer Style
 ----------------*/
 .footer_section {
-    position: absolute;
-    bottom: 0px;
-    left:0px;
-    width:100%;
+    position: relative;
+    bottom: -270px;
+    left: 0px;
+    width: 112.4%;
+    background-color: blue;
+    color: white;
 }
 
-footer div ul{
-    list-style:none;
+.footer_section div {
     display:inline-block;
+    padding:10px 10px 0px 20px;
+    text-align:center;
 }
-footer div ul li a {
+.footer_address{
+    float:right;
+}
+.footer_map{
+    position:relative;
+    right:200px;
+}
+.footer_contact{
+    position:relative;
+    left:-83px;
+    float:left;
+}
+.footer_section div ul {
+    list-style: none;
+    padding-right: 20px;
+    text-align: center;
+}
+.footer_section div ul li a {
     text-decoration: none;
     color:white;
     font-size: 20px;
 }
-footer div ul li a:hover {
+.footer_section div ul li a:hover {
     color: #d82a4e;
     text-decoration: none;
 }
 .footer_div_form_a {
+    position:relative;
+    left:-130px;
     background-color:black;
     color:white;
     width: 150px;
@@ -137,8 +182,12 @@ footer div ul li a:hover {
     margin-left:160px;
     text-decoration:none;
 }
-.footer_newslatter{
-    margin-left:120px;
+
+.footer_copy{
+    position:relative;
+    bottom:-40px;
+    left:70px;
+    display:inline-block;
 }
 .footer_instagram {
     font-size: 24px;
